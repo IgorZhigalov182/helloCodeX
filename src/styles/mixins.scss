@@ -1,0 +1,18 @@
+@mixin small {
+    width: 59px;
+    height: 28px;
+}
+
+@mixin medium {
+    width: 67px;
+    height: 36px;
+}
+
+@mixin large {
+    width: 107px;
+    height: 44px;
+}
+
+@mixin disabled {
+    
+}

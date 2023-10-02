@@ -1,0 +1,335 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+button {
+    cursor: pointer;
+    font-size: 14px;
+    padding-bottom: 2px;
+    user-select: none;
+}
+
+.btn {
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        transition: 0.3s;
+    }
+}
+
+.disabled {
+    cursor: default;
+    button {
+        cursor: default;
+    }
+}
+
+html[data-theme='light'] {
+    .secondary, label, h1, h2, h3, h4, h5 {
+        color: black;
+    }
+}
+
+.solid {
+    &.primary {
+        border-color: $primary;
+        background-color: $primary;
+
+        &:hover {
+            background-color: $solidPrimaryHover;
+        }
+
+        &.disabled {
+            background-color: $solidDisabledBackground;
+            color: $solidDisabledText;
+        }
+    }
+
+    &.danger {
+        border-color: $danger;
+        background-color: $danger;
+
+        &:hover {
+            background-color: $solidDangerHover;
+        }
+
+        &.disabled {
+            background-color: $solidDisabledBackground;
+            color: $solidDisabledText;
+        }
+    }
+
+    &.secondary {
+        border-color: $secondary;
+        background-color: $secondary;
+
+        &:hover {
+            background-color: $solidSecondaryHover;
+        }
+
+        &.disabled {
+            background-color: $solidDisabledBackground;
+            color: $solidDisabledText;
+        }
+    }
+}
+
+.outline {
+    background-color: transparent;
+
+    &.primary {
+        color: $primary;
+        border: 1px solid $outlinePrimaryHover;
+
+        &:hover {
+            background-color: $outlinePrimaryHover;
+        }
+
+        &.disabled {
+            border: 1px solid $solidDisabledText ;
+            color: $solidDisabledText;
+    
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &.danger {
+        border: 1px solid $outlineDangerHover;
+        color: $danger;
+
+        &:hover {
+            background-color: $outlineDangerHover;
+        }
+
+        &.disabled {
+            border: 1px solid $solidDisabledText ;
+            color: $solidDisabledText;
+    
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &.secondary {
+        border: 1px solid $outlineSecondaryHover;
+        color: $outlineSecondaryFont;
+        
+        &:hover {
+            background-color: $outlineSecondaryHover;
+        }
+    
+        &.disabled {
+            border: 1px solid $solidDisabledText ;
+            color: $solidDisabledText;
+    
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.soft {
+    border: none;
+
+    &.primary {
+        background-color: $primarySoft;
+        color: $primary;    
+
+        &:hover {
+            background-color: $softPrimaryHover;
+        }
+    
+        &.disabled {
+            background-color: $softDisabledBackground;
+            color: $softDisabledText;
+        }
+    }
+
+    &.danger {
+        background-color: $dangerSoft;
+        color: $danger;
+        
+        &:hover {
+            background-color: $softDangerHover;
+        }
+    
+        &.disabled {
+            background-color: $softDisabledBackground;
+            color: $softDisabledText;
+        }
+    }
+
+    &.secondary {
+        background-color: $secondarySoft ;
+        color: $outlineSecondaryFont;
+    
+        &:hover {
+            background-color: $softSecondaryHover;
+        }
+    
+        &.disabled {
+            background-color: $softDisabledBackground;
+            color: $softDisabledText;
+        }
+    }
+}
+
+.ghost {
+    &.primary {
+        color: $primary;
+        &:hover {
+            background-color: $ghostPrimaryHover;
+        }
+        &.disabled {
+            background-color: transparent;
+        }
+    }
+
+    &.danger {
+        color: $ghostDanger;
+   
+        &:hover {
+         background-color: $ghostDangerHover;
+        }
+        &.disabled {
+          background-color: transparent;
+        }
+    }
+
+    &.secondary {
+        color: $ghostSecondary;
+        &:hover {
+            background-color: $ghostSecondaryHover;
+        }
+        &.disabled {
+            background-color: transparent;
+        }
+    }
+}
+
+.small {
+    @include small;
+}
+
+.medium {
+    @include medium;
+}
+
+.large {
+    @include large;
+}
+
+.leading {
+    &.small {
+        width: 77px;
+        height: 28px;
+    }
+
+    &.medium {
+        width: 89px;
+        height: 36px;
+    }
+
+    &.large {
+        width: 107px;
+        height: 44px;
+        gap: 8px;
+    }
+    
+    .trail {
+       display: none;
+    }
+
+    .lead {
+        margin-left: -5px;
+    }
+
+}
+
+.trailing {
+    button {
+        margin-left: 7px;
+    }
+
+    &.small {
+        width: 77px;
+        height: 28px;
+    }
+
+    &.medium {
+        width: 89px;
+        height: 36px;
+    }
+
+    &.large {
+        width: 107px;
+        height: 44px;
+        gap: 8px;
+    }
+
+    .lead {
+        display: none;
+    }
+    
+    .trail {
+        rotate: 90deg;
+        transform: scale(0.8);
+    }
+}
+
+.LeadingTrailing {
+    &.small {
+        width: 95px;
+        height: 28px;
+    }
+
+    &.medium {
+        width: 111px;
+        height: 36px;
+    }
+
+    &.large {
+        width: 131px;
+        height: 44px;
+        gap: 4px;
+    }
+
+    .trail {
+        rotate: 90deg;
+        transform: scale(0.8);
+    }
+}
+
+.standalone {
+    &.small {
+        width: 28px;
+        height: 28px;
+    }
+
+    &.medium {
+        width: 36px;
+        height: 36px;
+    }
+
+    &.large {
+        width: 44px;
+        height: 44px;
+    }
+
+    button, .trail {
+        display: none;
+    }
+}
+
+.noIcon {
+    .lead, .trail{
+        display: none;
+    }
+}
