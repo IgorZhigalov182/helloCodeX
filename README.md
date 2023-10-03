@@ -1,8 +1,44 @@
-# React + Vite
+# CodeX Button Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The button component is shown below in the image, it is possible to change the configuration using inputs
 
-Currently, two official plugins are available:
+## [Sandbox](https://hello-code-x.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img src="https://github.com/IgorZhigalov182/helloCodeX/assets/97223418/9de38ace-d837-410a-97ab-59558dbe7503" width="700" height="350">
+
+## Properties
+
+Button component accepts the following props:
+
+|Props|Value|
+|---| ---|
+|size| small - medium - large |
+|style| solid - outline - soft - ghost |
+|color| primary - secondary - danger |
+|handler | function triggered by pressing a button |
+|title | title inside button |
+|state| default - disabled |
+
+## Example
+
+Example of a button whose properties change adaptively depending on the theme:
+
+```javaScript
+<Button
+  iconType="noIcon"
+  size="medium"
+  style={theme === 'dark' ? 'solid' : 'outline'}
+  color="secondary"
+  handler={handleSwitchMode}
+  title={theme === 'dark' ? 'light' : 'dark'}
+  state="default"
+/>
+```
+
+## Install
+
+```javaScript
+cd helloCodeX
+npm install
+yarn dev
+```
