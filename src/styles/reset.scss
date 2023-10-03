@@ -66,7 +66,6 @@ button, input[type="submit"] {
     box-shadow: none;
     background-color: transparent;
     background: none;
-    // cursor: auto;
 }
 
 input:focus, input:active,
@@ -77,10 +76,6 @@ button:focus, button:active {
 button::-moz-focus-inner {
 	padding: 0;
 	border: 0;
-}
-
-label {
-	// cursor: pointer;
 }
 
 legend {

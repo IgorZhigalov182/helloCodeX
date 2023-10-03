@@ -1,4 +1,5 @@
 import { handleCheckboxChange } from '../../utils/handleCheckboxChange';
+import PropTypes from 'prop-types';
 import styles from './Palette.module.scss';
 
 const Palette = ({ state, setState }) => {
@@ -11,7 +12,7 @@ const Palette = ({ state, setState }) => {
           <div className={styles.typess} key={type}>
             <h5>{type}</h5>
             {state.map((option, index) => (
-              <div className={styles.inner}>
+              <div key={index} className={styles.inner}>
                 {option.type === type && (
                   <label key={index}>
                     <input
@@ -30,6 +31,11 @@ const Palette = ({ state, setState }) => {
       })}
     </div>
   );
+};
+
+Palette.propTypes = {
+  state: PropTypes.array,
+  setState: PropTypes.func,
 };
 
 export default Palette;

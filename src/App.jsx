@@ -29,13 +29,12 @@ function App() {
         color="secondary"
         handler={handleSwitchMode}
         title={theme === 'dark' ? 'light' : 'dark'}
+        state="default"
       />
       <h1>Hello CodeX</h1>
       <h4>Количество кликов - {countClick}/100</h4>
       <div className="wrapper">
-        <div className="options">
-          <Palette state={optionsStyle} setState={setOptionsStyle} />
-        </div>
+        <Palette state={optionsStyle} setState={setOptionsStyle} />
         <div className="btnWrapper">
           <Button
             handler={() => setCountClick(countClick + 1)}
